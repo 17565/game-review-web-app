@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    {% for item in results %}
+    <div>
+        <span>{{ item.game }}</span>
+    </div>
+    {%endfor%}
+{% endblock content %}
+
+{#{% extends "layout.html" %}
+
+{% block content %}
+
+        {% for item in results %}
+        <div class="grid-item">
+            <span>{{ item[1] }}</span>
+            <img src="static/images/{{ item[2] }}" style="width:258px;height: 387px;">
+        </div>
+        {%endfor%}
+
+{% endblock %}#}

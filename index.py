@@ -2,8 +2,9 @@
 
 from datetime import datetime
 
-from flask import Flask
+from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
+
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -34,32 +35,12 @@ class Review(db.Model):
     
 @app.route("/")
 def Index():
-    return "<h1>hello world<?h1>"
+    results = Game.query.all()
+    return render_template("home_page.html" , results=results)
 
 #runs app
 if __name__ == "__main__":
     app.run(debug=True)
-
-#>>> from test_code import db
-#>>> db.create_all()
-
-#>>> from test_code import User
-#>>> bob = User(name = "starcraft")
-#>>> db.session.add(bob)
-#>>> db.session.commit()
-#>>> from test_code import db,User
-#>>> sc = User.query.filter_by(id = 1).first() 
-#>>> sc
-#<User 1>
-
-#>>> sc = User.query.filter_by(id = 2).first()
-#>>> db.session.delete(sc)     
-#>>> db.session.commit()
-
-# = db.Column(db.Integer, db.ForeignKey(''),
-#        nullable=False)
-
-# = db.relationship('', backref='', lazy=True)
 
 """gener table
 class Gener(db.Model):
