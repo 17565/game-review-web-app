@@ -16,7 +16,7 @@ class Game(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     game = db.Column(db.String(50))
     reviews = db.relationship('Review', backref='game', lazy=True)
-#    image = db.Column(db.String(50))
+    image = db.Column(db.String(50))
 #    release_date = db.Column(db.String(50))
 #    gener_id = db.Column(db.Integer, db.ForeignKey(''),
 #        nullable=False)
@@ -37,6 +37,11 @@ class Review(db.Model):
 def Index():
     results = Game.query.all()
     return render_template("home_page.html" , results=results)
+
+#displays page
+@app.route("/games")
+def games():
+    return render_template ("my_games.html")
 
 #runs app
 if __name__ == "__main__":

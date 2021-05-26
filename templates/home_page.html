@@ -1,11 +1,17 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    {% for item in results %}
-    <div>
-        <span>{{ item.game }}</span>
+<h1>games</h1>
+    <div class="grid-container">
+
+        {% for item in results %}
+        <div class="grid-item">
+            <span>{{ item.game }}</span>
+            <img src="static/images/{{ item.image }}">
+            <p>{{ item.reviews }}</p>
+        </div>
+        {%endfor%}
     </div>
-    {%endfor%}
 {% endblock content %}
 
 {#{% extends "layout.html" %}
@@ -19,4 +25,13 @@
         </div>
         {%endfor%}
 
-{% endblock %}#}
+{% endblock %}
+
+<div class="wrapper">
+    <div class="genre">
+        <div>
+            <li><a href="/games_genre">genre</a></li>
+            <li><a href="/games">All games</a></li>
+        </div>
+    </div>
+    <div class="grid-container">#}
