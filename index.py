@@ -33,15 +33,15 @@ class Review(db.Model):
         nullable=False)
 
     
-@app.route("/")
+@app.route("/games")
 def Index():
     results = Game.query.all()
-    return render_template("home_page.html" , results=results)
+    return render_template("my_games.html" , results=results)
 
 #displays page
-@app.route("/games")
+@app.route("/")
 def games():
-    return render_template ("my_games.html")
+    return render_template ("home_page.html")
 
 #runs app
 if __name__ == "__main__":
