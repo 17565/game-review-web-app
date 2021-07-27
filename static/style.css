@@ -1,33 +1,80 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color:white;
+  background-color: #d7263d;
 }
 
-img{
+img {
   width:268px;
   height: 387px;
-  outline: auto;
+  border-radius: auto;
 }
 
-ul{
+.card {
+  /* Add shadows to create the "card" effect */
+  background-color: #02182b;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,1);
+  transition: 0.3s;
+}
+
+.individual-card {
+  background-color: #02182b;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,1);
+  transition: 0.3s;
+}
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 16px 32px 0 rgba(0,0,0,1.6);
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
+}
+
+ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: black;
+  background-color: #02182b;
 }
 
-li{
+li {
   float: left;
+  padding: 0px 10px;
 }
 
+.nav-bar {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,1);
+  transition: 0.3s;
+}
 
-li,a{
+.nav-bar:hover{
+  box-shadow: 0 16px 32px 0 rgba(0,0,0,1.6);
+}
+
+.body-colour{
+  background-color: #02182b;
+}
+
+span,a,ul{
   display: block;
-  color: white;
+  color: #d7263d;
   text-align: center;
-  padding: 10px 10px;
   text-decoration: none;
+  font-size: 25px;
+  padding: 10px 10px;
+  margin: -5px;
+}
+
+p {
+  display: block;
+  color: #d7263d;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px 10px;
+  margin: -5px;
 }
 
 .wrapper {
@@ -43,10 +90,20 @@ li,a{
 
 .grid-item {
   padding: 20px;
-  font-size: 30px;
   text-align: center;
-  color:black;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.information-menu {
+  background-color: #02182b;
+}
+
+/* hame page css */
+.home-page-information {
+  margin: 20px 0px;
+  background-color: #02182b;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,1);
+  transition: 0.3s;
 }

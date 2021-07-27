@@ -1,29 +1,34 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<h1>games</h1>
-    <div class="grid-container">
+<div class="grid-container">
 
-        {% for item in results %}
-        <div class="grid-item">
-            <span>{{ item.game }}</span>
-            <img src="static/images/{{ item.image }}">
-            <p>{{ item.reviews }}</p>
+    {% for item in results %}
+    <div class="grid-item">
+        <div class="card">
+            <div class="container">
+                <p>
+                    <a href="{{url_for('individuals',id = item.id)}}">{{ item.game }}</a>
+                </p>
+            </div>
+            <a href="{{url_for('individuals',id = item.id)}}"><img src="static/images/{{item.image}}"></a>
         </div>
-        {%endfor%}
     </div>
+    {%endfor%}
+
+</div>
 {% endblock content %}
 
 {#{% extends "layout.html" %}
 
 {% block content %}
 
-        {% for item in results %}
-        <div class="grid-item">
-            <span>{{ item[1] }}</span>
-            <img src="static/images/{{ item[2] }}" style="width:258px;height: 387px;">
-        </div>
-        {%endfor%}
+{% for item in results %}
+<div class="grid-item">
+    <span>{{ item[1] }}</span>
+    <img src="static/images/{{ item[2] }}" style="width:258px;height: 387px;">
+</div>
+{%endfor%}
 
 {% endblock %}
 
