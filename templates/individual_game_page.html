@@ -2,69 +2,43 @@
 
 {% block content %}
 <div class="grid-container">
+    <div class="information">
+        <div class="release-date">
+            <a>Release date</a>
+            <p>{{ game.release_date }}</p>
+        </div>
+        <div class="release-date">
+            <a>Gener</a>
+            <p>{{ gener.gener }}</p>
+        </div>
+        <div class="release-date">
+            <a>Publisher</a>
+            <p>{{ publisher.publisher }}</p>
+        </div>
+        <div class="release-date">
+            <a>Developer</a>
+            <p>{{ developer.developer }}</p>
+        </div>
+    </div>
 
     <div class="grid-item">
-        <div class="information-menu">
-
-        </div>
         <div class="individual-card">
             <div class="container">
-                <span>{{ item.game }}</span>
+                <span>{{ game.game }}</span>
             </div>
             <span>
-                <a><img src="/static/images/{{ item.image }}"></a>
-            </span>
-            {% for review in item.reviews %}
-            <div>
-                <p>{{ review.review }}</p>
-            </div>
-            {%endfor%}
+                <a><img src="/static/images/{{ game.image }}"></a>
         </div>
     </div>
 
 </div>
-{% endblock content %}
 
-<!--
-<div class="body-colour">
--->
-
-<!--
-    
-<div class="grid-container">
-
-    {% for item in results %}
-    <div class="grid-item">
-        <div class="card">
-            <div class="container">
-                <div class = text-size>
-                    <li><a href="{{url_for('individuals',id = item.id)}}">{{ item.game }}</a></li>
-                </div>
-            </div>
-            <li><a href="{{url_for('individuals',id = item.id)}}"><img src="static/images/{{item.image}}"></a></li>
-        </div>
+<div>
+    </span>
+    {% for review in game.reviews %}
+    <div class="review">
+        <p>{{ review.review }}</p>
     </div>
     {%endfor%}
-    
-<div class="grid-container">
-
-    <div class="grid-item">
-        <div class="individual-card">
-            <div class="container">
-                <div class=text-size>
-                    <li><a><span>{{ item.game }}</span></a></li>
-                </div>
-            </div>
-            <li><a><img src="/static/images/{{ item.image }}"></a></li>
-            <div>
-                {% for review in item.reviews %}
-                    <div>
-                        <p>{{ review.review }}</p>
-                    </div>
-                {%endfor%}
-            </div>
-        </div>
-    </div>
-
 </div>
--->
+{% endblock content %}

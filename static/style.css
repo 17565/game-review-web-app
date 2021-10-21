@@ -57,6 +57,7 @@ li {
   background-color: #02182b;
 }
 
+
 span,a,ul{
   display: block;
   color: #d7263d;
@@ -96,14 +97,57 @@ p {
   align-items: center;
 }
 
-.information-menu {
-  background-color: #02182b;
-}
-
 /* hame page css */
 .home-page-information {
   margin: 20px 0px;
   background-color: #02182b;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,1);
-  transition: 0.3s;
+}
+
+.information {
+  margin: 20px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #02182b;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,1);
+}
+
+/* .title{
+  display: block;
+  color: #d7263d;
+  text-align: center;
+  text-decoration: none;
+  font-size: 25px;
+} */
+
+.release-date {
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  padding: 20px;
+}
+
+.review{
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  background-color: #02182b;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,1);
+  width: 400px;
+  float: left;
+  margin: 20px 20px;
+}
+
+.add-review-here {
+  background-color: #02182b;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,1);
+  padding: 20px;
+  display: flex;
+  margin: 20px;
+}
+
+.type-review{
+  margin: 0px 20px;
 }

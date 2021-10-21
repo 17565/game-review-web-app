@@ -1,5 +1,16 @@
 {% extends "layout.html" %}
 
 {% block content %}
-
+<form method="post">
+    <div class="add-review-here">
+        <select name="game">
+            {% for game in games %}
+            <option value="{{ game.id }}">{{ game.game }}</option>
+            {% endfor %}
+        </select>
+        <div class="type-review">
+            <input type="text" name="review">
+        </div>
+    </div>
+</form>
 {% endblock content %}
