@@ -1,6 +1,6 @@
 """ this is  the main set of code form my web app"""
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, url_for
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.utils import redirect
 
@@ -65,7 +65,7 @@ def games():
 def home():
     return render_template ("home_page.html")
 
-#displays page
+#Add review page
 @app.route("/add", methods=["POST", "GET"])
 def add_review():
     if request.method == "POST":
@@ -77,6 +77,16 @@ def add_review():
         return redirect('/add')
     games = Game.query.all()
     return render_template ("add_review.html", games=games)
+
+@app.route("/remove", methods=["POST"])
+def remove_review():
+    if request.method == "POST":
+        print(request.form.get('review'))
+        review = Review.query.filter_by(id=request.form.get('review')).first()
+        print(review)
+        db.session.delete(review)
+        db.session.commit()
+        return redirect(url_for('games'))
 
 @app.route("/individuals/<int:id>")
 def individuals(id):
